@@ -65,7 +65,7 @@ class QueryHandler(object):
             data, addr = self.socket.recvfrom(PACKET_SIZE)
             self.last_update = time.time()
         except Exception as e:
-            print('cant recive')
+            pass
         if data:
             sock.sendto(data, self.q_key[0])
             LOOP.remove_reader(self.socket)
@@ -75,7 +75,7 @@ class QueryHandler(object):
             self.last_update = time.time()
             self.socket.sendto(data, addr)
         except Exception as e:
-            print('cant send')
+            pass
 
     def close(self):
         try:
@@ -92,7 +92,6 @@ def create_server(dns):
     def server_handler():
         try:
             data, addr = dns.get_sock.recvfrom(PACKET_SIZE)
-            print('got {} bytes'.format(len(data)))
         except Exception as e:
             pass
         if data is not None:
