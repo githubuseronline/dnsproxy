@@ -183,7 +183,6 @@ def create_server(dns):
         except Exception as e:
             pass
         if data is not None:
-            print('cache size: {}'.format(len(cache.bag)))
             #there could be some work with header...
             dns_header.load(data)
             domain = parse_domain(data[_DOMAIN:])
