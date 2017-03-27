@@ -1,2 +1,2 @@
 # asyncdnsproxy
-Dnsproxy (Python)
+simple dnsproxy (Python)
