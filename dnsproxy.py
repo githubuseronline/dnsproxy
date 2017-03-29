@@ -186,7 +186,11 @@ def create_server(dns):
 
         if data is not None:
             total += 1
+            
+            # there could be some 
+            # dns query processing
             dns_header.load(data)
+            
             domain = parse_domain(data[_DOMAIN:])
             _id = data[:_ID]
 
